@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A453AFB32786655D0088C876 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A453AFB22786655D0088C876 /* MapView.swift */; };
 		A4603B7D2786526D00D8B9C6 /* capital_one_greatest_percentageApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4603B7C2786526D00D8B9C6 /* capital_one_greatest_percentageApp.swift */; };
 		A4603B7F2786526D00D8B9C6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4603B7E2786526D00D8B9C6 /* ContentView.swift */; };
 		A4603B812786526E00D8B9C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4603B802786526E00D8B9C6 /* Assets.xcassets */; };
@@ -14,6 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A453AFB22786655D0088C876 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		A4603B792786526D00D8B9C6 /* capital-one-greatest-percentage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "capital-one-greatest-percentage.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4603B7C2786526D00D8B9C6 /* capital_one_greatest_percentageApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = capital_one_greatest_percentageApp.swift; sourceTree = "<group>"; };
 		A4603B7E2786526D00D8B9C6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -32,6 +34,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A453AFAF278665290088C876 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A453AFB22786655D0088C876 /* MapView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A453AFB02786653C0088C876 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A453AFB1278665430088C876 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		A4603B702786526D00D8B9C6 = {
 			isa = PBXGroup;
 			children = (
@@ -51,6 +75,9 @@
 		A4603B7B2786526D00D8B9C6 /* capital-one-greatest-percentage */ = {
 			isa = PBXGroup;
 			children = (
+				A453AFAF278665290088C876 /* Views */,
+				A453AFB02786653C0088C876 /* Models */,
+				A453AFB1278665430088C876 /* Resources */,
 				A4603B7C2786526D00D8B9C6 /* capital_one_greatest_percentageApp.swift */,
 				A4603B7E2786526D00D8B9C6 /* ContentView.swift */,
 				A4603B802786526E00D8B9C6 /* Assets.xcassets */,
@@ -138,6 +165,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A4603B7F2786526D00D8B9C6 /* ContentView.swift in Sources */,
+				A453AFB32786655D0088C876 /* MapView.swift in Sources */,
 				A4603B7D2786526D00D8B9C6 /* capital_one_greatest_percentageApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
