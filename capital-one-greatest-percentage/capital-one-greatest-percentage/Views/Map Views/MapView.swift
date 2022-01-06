@@ -23,21 +23,69 @@ struct MapView: View {
     
     
     var body: some View {
-        /*Button("Show Menu") {
-                    showingPopover = true
+        ZStack {
+            Map(coordinateRegion: $viewModel.region, showsUserLocation: true)
+                .ignoresSafeArea()
+                .accentColor(Color(.systemPink))
+                .onAppear {
+                    viewModel.checkLocationServiceStatus()
                 }
-        .popover(isPresented: $showingPopover) {
-                    Text("Your content here")
-                        .font(.headline)
-                        .padding()
-                }*/
-        //LocationPermission(userLocationManager: userLocationManager)
-        Map(coordinateRegion: $viewModel.region, showsUserLocation: true)
-            .ignoresSafeArea()
-            .accentColor(Color(.systemPink))
-            .onAppear {
-                viewModel.checkLocationServiceStatus()
+            
+                
+                
+            VStack {
+                HStack {
+                    Image(systemName: "🔍")
+                        .foregroundColor(.gray)
+                    TextField("Search", text: $viewModel.mapSearchText)
+                }
+                .padding(.vertical, 10)
+                .padding(.horizontal)
+                .background(Color.white)
+                .cornerRadius(10)
+                .padding()
+                
+                if !viewModel.stores.isEmpty && viewModel.mapSearchText != "" {
+                    
+                    ScrollView {
+                        
+                        VStack(spacing: 15) {
+                            
+                            ForEach(viewModel.stores){store in
+                                
+                                Text(store.store.name ?? "")
+                                    .foregroundColor(.black)
+                                    .frame(maxWidth: .infinity, alignment: .leading)
+                                Divider()
+                            }
+                        }
+                        
+                    }
+                    .background(.white)
+                    .cornerRadius(10)
+                    .padding()
+                    
+                    
+                }
+                Spacer()
+                
+            }.padding()
+            
+        }
+        .onChange(of: viewModel.mapSearchText, perform: { newValue in
+            // searching nearby places
+            // can add filters here later for cap one dicount places or pin them differently
+            
+            let delay = 0.3
+        
+            DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
+                
+                if newValue == viewModel.mapSearchText {
+                    // search
+                    self.viewModel.searchQueryNearby()
+                }
             }
+        })
     }
 }
 

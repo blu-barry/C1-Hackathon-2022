@@ -9,16 +9,11 @@ import SwiftUI
 
 struct MainView: View {
     
-    //@State var searchText: String
+    @State private var searchText: String = ""
     
     var body: some View {
         NavigationView {
-            ZStack {
-                MapView()
-                
-                /*TextField("Type your search",text: $searchText)
-                .textFieldStyle(RoundedBorderTextFieldStyle())*/
-            }
+            MapView()
         }
     }
 }
