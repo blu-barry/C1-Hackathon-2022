@@ -12,28 +12,41 @@ struct MainView: View {
     @State private var searchText: String = ""
     
     var body: some View {
+        
         NavigationView{
             ScrollView {
                 VStack {
                     Image("logo").resizable().aspectRatio(contentMode: .fit).frame(width: 200, height: 70, alignment: .center)
-                    Text("Welcome Summiteers")
+                    Text("Welcome Summiteers").font(.custom("OpenSans-Bold", size: 20))
                 }
 
                 VStack{
-                    Image("balance").resizable().scaledToFit().aspectRatio(contentMode:.fit).padding(.horizontal, 30)
-                        
-                    Image("creditwise").resizable().scaledToFit().aspectRatio(contentMode:.fit).padding(.horizontal, 30)
-                }
+                    HStack{
+                        Spacer()
+                    GeometryReader { geometry in
+                    Image("balance").resizable().scaledToFit().aspectRatio(contentMode:.fit).frame(width: geometry.size.width, height: geometry.size.height, alignment: .center)
+                    }.frame(height: 400)
+                        Spacer()
+                    }
+
+                    HStack{
+                        Spacer()
+                    GeometryReader { geometry in
+                    Image("creditwise").resizable().scaledToFit().aspectRatio(contentMode:.fit).frame(width: geometry.size.width, height: geometry.size.height, alignment: .center)
+                    }.frame(height: 400)
+                        Spacer()
+                    }
+                }.padding(.all)
                 
-                ZStack{
-                    Text("Branch/ATM")
-                }.padding(30)
+                VStack{
+                    Text("Branch/ATM").font(.largeTitle).frame(alignment: .leading).padding(30).frame(alignment: .leading).font(.custom("OpenSans-Bold", size: 20))
                 
                 VStack {
                     NavigationLink(destination: MapView()) {
-                        Text("Rewards").foregroundColor(Color.black)
+                        Text("Rewards").foregroundColor(Color.black).font(.largeTitle).padding(30).frame(alignment: .leading).font(.custom("OpenSans-Bold", size: 20))
+                        }
                     }
-                }
+                }.padding(.all)
             }
         }
     }
