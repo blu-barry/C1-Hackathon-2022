@@ -5,19 +5,29 @@
 //  Created by Michael Barry on 1/5/22.
 //
 
-import Foundation
+import MapKit
 
-struct LocationModel {
-    /// General ata model for a pin or users location
-    var latitude_coor: Double
-    var longitude_coor: Double
-    var latitudeDeltaZoom: Double
-    var longitudeDeltaZoom: Double
-    
-    init(latitude_coor: Double? = 38.9259, longitude_coor: Double? = -77.2120, latitudeDeltaZoom: Double? = 0.1, longitudeDeltaZoom: Double? = 0.1) {
-        self.latitude_coor = latitude_coor!
-        self.longitude_coor = latitude_coor!
-        self.latitudeDeltaZoom = latitude_coor!
-        self.longitudeDeltaZoom = latitude_coor!
+//struct LocationModel {
+//    /// General ata model for a pin or users location
+//
+//    //var id = UUID().uuidString?
+//    let id: UUID
+//    var locationInfo: MKMapItem
+//    let location2D: CLLocationCoordinate2D
+//
+//    init(id: UUID = UUID(), locationInfo: MKMapItem) {
+//        self.id = id
+//        self.locationInfo = locationInfo
+//        self.location2D = locationInfo.placemark.coordinate
+//    }
+//
+//}
+
+struct IdentifiablePlaceModel: Identifiable {
+    let id: UUID
+    let location: CLLocationCoordinate2D
+    init(id: UUID = UUID(), location: CLLocationCoordinate2D) {
+        self.id = id
+        self.location = location
     }
 }
