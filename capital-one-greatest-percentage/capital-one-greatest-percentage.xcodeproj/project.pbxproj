@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A453AFB32786655D0088C876 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A453AFB22786655D0088C876 /* MapView.swift */; };
-		A453AFB527866D310088C876 /* LocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A453AFB427866D310088C876 /* LocationModel.swift */; };
-		A453AFC12786A4500088C876 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A453AFC02786A4500088C876 /* MapViewModel.swift */; };
 		A4603B7D2786526D00D8B9C6 /* capital_one_greatest_percentageApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4603B7C2786526D00D8B9C6 /* capital_one_greatest_percentageApp.swift */; };
 		A4603B7F2786526D00D8B9C6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4603B7E2786526D00D8B9C6 /* ContentView.swift */; };
 		A4603B812786526E00D8B9C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4603B802786526E00D8B9C6 /* Assets.xcassets */; };
@@ -17,10 +14,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		A453AFB22786655D0088C876 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
-		A453AFB427866D310088C876 /* LocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationModel.swift; sourceTree = "<group>"; };
-		A453AFBF27869FA80088C876 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		A453AFC02786A4500088C876 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		A4603B792786526D00D8B9C6 /* capital-one-greatest-percentage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "capital-one-greatest-percentage.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4603B7C2786526D00D8B9C6 /* capital_one_greatest_percentageApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = capital_one_greatest_percentageApp.swift; sourceTree = "<group>"; };
 		A4603B7E2786526D00D8B9C6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -39,38 +32,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		A453AFAF278665290088C876 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				A453AFBE278690E20088C876 /* Map Views */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		A453AFB02786653C0088C876 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				A453AFC02786A4500088C876 /* MapViewModel.swift */,
-				A453AFB427866D310088C876 /* LocationModel.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		A453AFB1278665430088C876 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		A453AFBE278690E20088C876 /* Map Views */ = {
-			isa = PBXGroup;
-			children = (
-				A453AFB22786655D0088C876 /* MapView.swift */,
-			);
-			path = "Map Views";
-			sourceTree = "<group>";
-		};
 		A4603B702786526D00D8B9C6 = {
 			isa = PBXGroup;
 			children = (
@@ -90,10 +51,6 @@
 		A4603B7B2786526D00D8B9C6 /* capital-one-greatest-percentage */ = {
 			isa = PBXGroup;
 			children = (
-				A453AFBF27869FA80088C876 /* Info.plist */,
-				A453AFAF278665290088C876 /* Views */,
-				A453AFB02786653C0088C876 /* Models */,
-				A453AFB1278665430088C876 /* Resources */,
 				A4603B7C2786526D00D8B9C6 /* capital_one_greatest_percentageApp.swift */,
 				A4603B7E2786526D00D8B9C6 /* ContentView.swift */,
 				A4603B802786526E00D8B9C6 /* Assets.xcassets */,
@@ -180,11 +137,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A453AFB527866D310088C876 /* LocationModel.swift in Sources */,
 				A4603B7F2786526D00D8B9C6 /* ContentView.swift in Sources */,
-				A453AFB32786655D0088C876 /* MapView.swift in Sources */,
 				A4603B7D2786526D00D8B9C6 /* capital_one_greatest_percentageApp.swift in Sources */,
-				A453AFC12786A4500088C876 /* MapViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -315,12 +269,8 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"capital-one-greatest-percentage/Preview Content\"";
-				DEVELOPMENT_TEAM = GTLWW2YR6A;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "capital-one-greatest-percentage/Info.plist";
-				INFOPLIST_KEY_LSApplicationCategoryType = "";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app needs your location to show your position on the map";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -347,12 +297,8 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"capital-one-greatest-percentage/Preview Content\"";
-				DEVELOPMENT_TEAM = GTLWW2YR6A;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "capital-one-greatest-percentage/Info.plist";
-				INFOPLIST_KEY_LSApplicationCategoryType = "";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app needs your location to show your position on the map";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
