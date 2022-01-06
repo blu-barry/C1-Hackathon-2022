@@ -9,7 +9,6 @@ import SwiftUI
 import MapKit
 import CoreLocation
 
-
 struct MapView: View {
     /// MapView is the view that contains the pin locations etc for visualizing the proximity based establishment data (resturants, retail stores, etc)
     //let locationManager = CLLocationManager()
@@ -21,6 +20,7 @@ struct MapView: View {
     
     @State private var showingPopover = false
     
+    @State private var cashbackLocations: [String] = ["Walgreens", "Wine Shop", "Macys", "Overstick", "JCPenny", "Expedia", "Grubhub", "Priceline", "Groupon", "Sephore", "Hotels.com", "Ulta", "HSN", "GAP", "GAP Factory", "J.Crew", "Vistaprint 8", "Anthropologie", "TireRack.com", "Belk", "Best Western", "Vitacost.com", "Michaels ", "Academny", "American Eagle", "Bloomingdales", "Lulus", "Quill.com", "Dyson", "Hotwire", "l.l.Bean", "Adidas", "Shop Disney", "J.Crew Factory", "Asos", "Saks Fifth Avenue", "Cheap Q Air", "Advance Auto Parts", "Madewell", "paramount+", "LTD Commodities", "Travelocity", "The Lakeside Collection", "Xfinity", "Orbitz ", "Newark", "Edible Arrangements", "Custom Ink"]
     
     var body: some View {
         ZStack {

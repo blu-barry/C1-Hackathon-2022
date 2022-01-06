@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4684BE2B278758C1002777C1 /* CashbackDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4684BE2A278758C1002777C1 /* CashbackDataModel.swift */; };
 		A453AFB32786655D0088C876 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A453AFB22786655D0088C876 /* MapView.swift */; };
 		A453AFB527866D310088C876 /* LocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A453AFB427866D310088C876 /* LocationModel.swift */; };
 		A453AFC12786A4500088C876 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A453AFC02786A4500088C876 /* MapViewModel.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4684BE2A278758C1002777C1 /* CashbackDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashbackDataModel.swift; sourceTree = "<group>"; };
 		A453AFB22786655D0088C876 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		A453AFB427866D310088C876 /* LocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationModel.swift; sourceTree = "<group>"; };
 		A453AFBF27869FA80088C876 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -58,6 +60,7 @@
 				A453AFC02786A4500088C876 /* MapViewModel.swift */,
 				A453AFB427866D310088C876 /* LocationModel.swift */,
 				A453AFC42786D1400088C876 /* StoreModel.swift */,
+				4684BE2A278758C1002777C1 /* CashbackDataModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -191,6 +194,7 @@
 				A4603B7F2786526D00D8B9C6 /* ContentView.swift in Sources */,
 				A453AFB32786655D0088C876 /* MapView.swift in Sources */,
 				A453AFC52786D1400088C876 /* StoreModel.swift in Sources */,
+				4684BE2B278758C1002777C1 /* CashbackDataModel.swift in Sources */,
 				A4603B7D2786526D00D8B9C6 /* capital_one_greatest_percentageApp.swift in Sources */,
 				A453AFC12786A4500088C876 /* MapViewModel.swift in Sources */,
 			);
