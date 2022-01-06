@@ -13,7 +13,14 @@ struct MainView: View {
     
     var body: some View {
         NavigationView {
-            MapView()
+            NavigationView {
+                List {
+                    NavigationLink(destination: MapView()) {
+                        Text("Rewards")
+                    }.navigationTitle("Capital One")
+                    Text("test")
+                 }
+            }
         }
     }
 }
