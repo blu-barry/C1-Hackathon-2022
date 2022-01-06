@@ -35,7 +35,8 @@ final class MapViewModel: NSObject, ObservableObject, CLLocationManagerDelegate 
                 for i in 1...dataLines.count-1 {
                     let split = dataLines[i].components(separatedBy: ",")
                     if split.count > 1 {
-                        cbDict[split[0]] = CashbackDataModel(locationName: split[0], locationPercentage: Int(split[1]) ?? 0)
+                        var name = split[0].components(separatedBy: .whitespaces).joined().lowercased()
+                        cbDict[name] = CashbackDataModel(locationName: name, locationPercentage: Int(split[1]) ?? 0)
                     }
                 }
             } catch {
