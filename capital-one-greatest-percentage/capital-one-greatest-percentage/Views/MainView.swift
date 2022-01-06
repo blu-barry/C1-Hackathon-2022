@@ -9,12 +9,10 @@ import SwiftUI
 
 struct MainView: View {
     
-    @State private var searchText: String = ""
+    @State private var search: String = ""
     
     var body: some View {
-        NavigationView {
-            MapView()
-        }
+        MapView()
     }
 }
 
@@ -24,3 +22,14 @@ struct MainView_Previews: PreviewProvider {
         MainView()
     }
 }
+
+//ZStack(alignment: .top) {
+//
+//    MapView()
+//
+//    TextField("Search", text: $search, onEditingChanged: { _ in }) {
+//        //commit
+//    }.textFieldStyle(RoundedBorderTextFieldStyle())
+//        .padding()
+//        .offset(y: 44)
+//}
