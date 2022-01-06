@@ -23,6 +23,15 @@ final class MapViewModel: NSObject, ObservableObject, CLLocationManagerDelegate 
     
     var locationManager: CLLocationManager?
     
+    
+    func generateCashbackDict(names: [String]) -> [String: CashbackDataModel] {
+        var cbDict: [String: CashbackDataModel] = [:]
+        for name in names {
+            cbDict[name] = CashbackDataModel(locationName: name, /* Placeholder percentage*/ locationPercentage: 1.5)
+        }
+        return cbDict
+    }
+    
     func checkLocationServiceStatus() {
         if CLLocationManager.locationServicesEnabled() {
             locationManager = CLLocationManager()
