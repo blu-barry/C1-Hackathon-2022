@@ -9,24 +9,40 @@ import SwiftUI
 import MapKit
 import CoreLocation
 
+
 struct MapView: View {
+    /// MapView is the view that contains the pin locations etc for visualizing the proximity based establishment data (resturants, retail stores, etc)
     //let locationManager = CLLocationManager()
     
     //locationManager.requestAlwaysAuthorization()
     //locationManager.requestWhenInUseAuthorization()
-    @State private var userLocationManger = UserLocationManager()
+    @StateObject private var viewModel = MapViewModel()
     @State private var locationModel: LocationModel?
     
-    @State var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 38.9259, longitude: -77.2120), span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1))
+    @State private var showingPopover = false
+    
     
     var body: some View {
-        Map(coordinateRegion: $region)
+        /*Button("Show Menu") {
+                    showingPopover = true
+                }
+        .popover(isPresented: $showingPopover) {
+                    Text("Your content here")
+                        .font(.headline)
+                        .padding()
+                }*/
+        //LocationPermission(userLocationManager: userLocationManager)
+        Map(coordinateRegion: $viewModel.region, showsUserLocation: true)
             .ignoresSafeArea()
+            .accentColor(Color(.systemPink))
+            .onAppear {
+                viewModel.checkLocationServiceStatus()
+            }
     }
 }
 
 struct MapView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        MapView()
     }
 }
