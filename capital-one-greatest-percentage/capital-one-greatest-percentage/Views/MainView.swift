@@ -25,7 +25,7 @@ struct MainView: View {
                         Spacer()
                     GeometryReader { geometry in
                     Image("balance").resizable().scaledToFit().aspectRatio(contentMode:.fit).frame(width: geometry.size.width, height: geometry.size.height, alignment: .center)
-                    }.frame(height: 400)
+                    }.frame(height: 200)
                         Spacer()
                     }
 
@@ -33,17 +33,17 @@ struct MainView: View {
                         Spacer()
                     GeometryReader { geometry in
                     Image("creditwise").resizable().scaledToFit().aspectRatio(contentMode:.fit).frame(width: geometry.size.width, height: geometry.size.height, alignment: .center)
-                    }.frame(height: 400)
+                    }.frame(height: 200)
                         Spacer()
                     }
                 }.padding(.all)
                 
                 VStack{
-                    Text("Branch/ATM").font(.largeTitle).frame(alignment: .leading).padding(30).frame(alignment: .leading).font(.custom("OpenSans-Bold", size: 20))
+                    Text("Branch/ATM").font(.largeTitle).frame(alignment: .topLeading).padding(20).frame(alignment: .topLeading).font(.custom("OpenSans-Bold", size: 20)).offset(x: -67)
                 
                 VStack {
                     NavigationLink(destination: MapView()) {
-                        Text("Rewards").foregroundColor(Color.black).font(.largeTitle).padding(30).frame(alignment: .leading).font(.custom("OpenSans-Bold", size: 20))
+                        Text("Rewards").foregroundColor(Color.black).font(.largeTitle).padding(20).frame(alignment: .topLeading).font(.custom("OpenSans-Bold", size: 20)).offset(x: -90)
                         }
                     }
                 }.padding(.all)
