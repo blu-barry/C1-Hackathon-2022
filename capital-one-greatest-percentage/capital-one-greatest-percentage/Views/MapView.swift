@@ -7,15 +7,21 @@
 
 import SwiftUI
 import MapKit
+import CoreLocation
 
 struct MapView: View {
+    //let locationManager = CLLocationManager()
     
-    //@State private var zoomLongitudeDelta = ?? 0.1
+    //locationManager.requestAlwaysAuthorization()
+    //locationManager.requestWhenInUseAuthorization()
     
-    @State private var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 38.9259, longitude: -77.2120), span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1))
+    @State private var locationModel: LocationModel?
+    
+    @State var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 38.9259, longitude: -77.2120), span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1))
     
     var body: some View {
         Map(coordinateRegion: $region)
+            .ignoresSafeArea()
     }
 }
 
