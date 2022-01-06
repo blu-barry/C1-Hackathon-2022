@@ -16,6 +16,11 @@ final class MapViewModel: NSObject, ObservableObject, CLLocationManagerDelegate 
     
     @Published var region = MKCoordinateRegion(center: MapDetails.defaultLocation, span: MapDetails.defaultSpan)
     
+    @Published var mapSearchText = ""
+    
+    // Searched Stores
+    @Published var stores : [StoreModel] = []
+    
     var locationManager: CLLocationManager?
     
     func checkLocationServiceStatus() {
@@ -49,5 +54,26 @@ final class MapViewModel: NSObject, ObservableObject, CLLocationManagerDelegate 
     
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
         checkLocationAuthorizationStatus()  // Monitors Location Authorization Status
+    }
+    
+    // search nearby places
+    
+    func searchQueryNearby() {
+        
+        stores.removeAll()
+        
+        let request = MKLocalSearch.Request()
+        request.naturalLanguageQuery = mapSearchText
+        
+        // Fetch
+        
+        MKLocalSearch(request: request).start { (response, _) in
+            
+            guard let result = response else { return }
+            
+            self.stores = result.mapItems.compactMap({ (item) -> StoreModel? in
+                return StoreModel(store: item.placemark)
+            })
+        }
     }
 }
