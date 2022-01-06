@@ -23,14 +23,28 @@ final class MapViewModel: NSObject, ObservableObject, CLLocationManagerDelegate 
     
     var locationManager: CLLocationManager?
     
-    
-    func generateCashbackDict(names: [String]) -> [String: CashbackDataModel] {
+    static var cashbackDict: [String: CashbackDataModel] = {
         var cbDict: [String: CashbackDataModel] = [:]
-        for name in names {
-            cbDict[name] = CashbackDataModel(locationName: name, /* Placeholder percentage*/ locationPercentage: 1.5)
+        
+        if var path = Bundle.main.path(forResource: "offers", ofType: "csv") {
+            do {
+                var data = try Data(contentsOf: URL(fileURLWithPath: path))
+                let dataStr = String(decoding: data, as: UTF8.self)
+                let dataLines = dataStr.components(separatedBy: .newlines)
+                
+                for i in 1...dataLines.count-1 {
+                    let split = dataLines[i].components(separatedBy: ",")
+                    if split.count > 1 {
+                        cbDict[split[0]] = CashbackDataModel(locationName: split[0], locationPercentage: Int(split[1]) ?? 0)
+                    }
+                }
+            } catch {
+                print("Unexpected error when loading file: \(error).")
+            }
         }
+        
         return cbDict
-    }
+    }()
     
     func checkLocationServiceStatus() {
         if CLLocationManager.locationServicesEnabled() {

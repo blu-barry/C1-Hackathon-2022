@@ -8,11 +8,11 @@
 import Foundation
 
 struct CashbackDataModel {
-    init(locationName: String, locationPercentage: Double) {
+    init(locationName: String, locationPercentage: Int) {
         name = locationName
         cashbackPercentage = locationPercentage
     }
     
     var name: String
-    var cashbackPercentage: Double
+    var cashbackPercentage: Int
 }
