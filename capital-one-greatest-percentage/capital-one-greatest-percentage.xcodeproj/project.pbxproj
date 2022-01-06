@@ -65,13 +65,6 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		A453AFB1278665430088C876 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
 		A453AFBE278690E20088C876 /* Map Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -102,7 +95,6 @@
 				A453AFBF27869FA80088C876 /* Info.plist */,
 				A453AFAF278665290088C876 /* Views */,
 				A453AFB02786653C0088C876 /* Models */,
-				A453AFB1278665430088C876 /* Resources */,
 				A4603B7C2786526D00D8B9C6 /* capital_one_greatest_percentageApp.swift */,
 				A4603B7E2786526D00D8B9C6 /* ContentView.swift */,
 				A4603B802786526E00D8B9C6 /* Assets.xcassets */,
