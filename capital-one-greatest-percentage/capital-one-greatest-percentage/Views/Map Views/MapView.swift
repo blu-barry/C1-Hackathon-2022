@@ -39,7 +39,7 @@ struct MapView: View {
                         .foregroundColor(.gray)
                     TextField("Search", text: $viewModel.mapSearchText)
                 }
-                .padding(.vertical, 10)
+                .padding(.vertical, 15)
                 .padding(.horizontal)
                 .background(Color.white)
                 .cornerRadius(10)
