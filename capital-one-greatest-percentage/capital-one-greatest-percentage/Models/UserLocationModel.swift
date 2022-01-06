@@ -9,4 +9,5 @@ import Foundation
 
 struct UserLocationModel {
     /// Data Model for a users location data
+    var locationModel: LocationModel
 }
