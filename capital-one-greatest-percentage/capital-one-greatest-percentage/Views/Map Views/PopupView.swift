@@ -5,61 +5,57 @@
 //  Created by Benjamin Bigdelle on 1/6/22.
 //
 import SwiftUI
+import MapKit
 
 
-struct SearchStackView: View {
+struct PopUpView: View {
 
-    let scrum: PopupInfo
+    let scrum: IdentifiablePlace
+    let userLocation: CLLocationCoordinate2D
 
     var body: some View {
 
         VStack(alignment: .leading) {
-
-            Text(scrum.title)
+            Text(scrum.name)
                 .font(.headline)
                 .accessibilityAddTraits(.isHeader)
-
-            Spacer()
-
+            
             HStack {
+                var point = CLLocation(latitude: scrum.location.latitude, longitude: scrum.location.longitude)
+                var usrLoc = CLLocation(latitude: userLocation.latitude, longitude: userLocation.longitude)
+                let distanceInMeters = point.distance(from: usrLoc)
+                
+                if(distanceInMeters <= 1609) {
+                    // under 1 mile
+                    var distanceStr = "Less than a mile"
+                    Label("Distance: \(distanceStr) mi", systemImage: "search")
+                        .accessibilityLabel("\(distanceStr) distance")
 
-                Label("Distance: \(scrum.distance) mi", systemImage: "search")
-                    .accessibilityLabel("\(scrum.distance) distance")
+                } else {
+                    // out of 1 mile
+                    var distanceStr = distanceInMeters/1609
+                    Label("Distance: \(distanceStr) mi", systemImage: "search")
+                        .accessibilityLabel("\(distanceStr) distance")
+                }
 
                 Spacer()
 
-                Label("\(scrum.location)", systemImage: "location")
-                    .accessibilityLabel("\(scrum.location) location")
-
-                    .padding(.trailing, 20)
-
-            }
-
-            .font(.caption)
-
-        }
-
-        .padding()
-        
-
-        .foregroundColor(scrum.theme.accentColor)
+            }.font(.caption)
+            Spacer()
+        }.padding()
 
     }
 
 }
 
 
-struct CardView_Previews: PreviewProvider {
+struct PopUpView_Previews: PreviewProvider {
 
-    static var scrum = PopupInfo.sampleData[0]
+    //static var scrum = IdentifiablePlace()
 
     static var previews: some View {
 
-        SearchStackView(scrum: scrum)
-
-            .background(scrum.theme.mainColor)
-
-            .previewLayout(.fixed(width: 400, height: 150))
+        PopUpView(scrum: IdentifiablePlace(lat: 37.3346, long: -122.0090, name: "Apple Park", cashBackPercentage: "0"), userLocation: CLLocationCoordinate2D(latitude: 37.3346, longitude: -122.0090))
 
     }
 

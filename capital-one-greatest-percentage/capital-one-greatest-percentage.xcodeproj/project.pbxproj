@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A43072AB2787F10A000ABCFF /* PopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43072AA2787F10A000ABCFF /* PopupView.swift */; };
+		A43072AE27880707000ABCFF /* ViewModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43072AD27880707000ABCFF /* ViewModifiers.swift */; };
 		A453AFB32786655D0088C876 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A453AFB22786655D0088C876 /* MapView.swift */; };
 		A453AFB527866D310088C876 /* LocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A453AFB427866D310088C876 /* LocationModel.swift */; };
 		A453AFC12786A4500088C876 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A453AFC02786A4500088C876 /* MapViewModel.swift */; };
@@ -19,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A43072AA2787F10A000ABCFF /* PopupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupView.swift; sourceTree = "<group>"; };
+		A43072AD27880707000ABCFF /* ViewModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModifiers.swift; sourceTree = "<group>"; };
 		A453AFB22786655D0088C876 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		A453AFB427866D310088C876 /* LocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationModel.swift; sourceTree = "<group>"; };
 		A453AFBF27869FA80088C876 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -43,6 +47,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A43072AC278806F5000ABCFF /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A43072AD27880707000ABCFF /* ViewModifiers.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		A453AFAF278665290088C876 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -66,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				A453AFB22786655D0088C876 /* MapView.swift */,
+				A43072AA2787F10A000ABCFF /* PopupView.swift */,
 			);
 			path = "Map Views";
 			sourceTree = "<group>";
@@ -92,6 +105,7 @@
 				A453AFBF27869FA80088C876 /* Info.plist */,
 				A453AFAF278665290088C876 /* Views */,
 				A453AFB02786653C0088C876 /* Models */,
+				A43072AC278806F5000ABCFF /* Resources */,
 				A4603B7C2786526D00D8B9C6 /* capital_one_greatest_percentageApp.swift */,
 				A4603B7E2786526D00D8B9C6 /* ContentView.swift */,
 				A4603B802786526E00D8B9C6 /* Assets.xcassets */,
@@ -179,7 +193,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A453AFB527866D310088C876 /* LocationModel.swift in Sources */,
+				A43072AB2787F10A000ABCFF /* PopupView.swift in Sources */,
 				A453AFC32786AF460088C876 /* MainView.swift in Sources */,
+				A43072AE27880707000ABCFF /* ViewModifiers.swift in Sources */,
 				A4603B7F2786526D00D8B9C6 /* ContentView.swift in Sources */,
 				A453AFB32786655D0088C876 /* MapView.swift in Sources */,
 				A453AFC52786D1400088C876 /* StoreModel.swift in Sources */,
