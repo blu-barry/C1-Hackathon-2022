@@ -32,10 +32,10 @@ struct MainView: View {
                   }
                 }.padding(.all)
                 VStack{
-                  Text("Branch/ATM").font(.largeTitle).frame(alignment: .topLeading).padding(20).frame(alignment: .topLeading).font(.custom("OpenSans-Bold", size: 20)).offset(x: -67)
+                    Text("Branch/ATM").foregroundColor(Color(red: 45/255, green: 72/255, blue: 98/255)).font(.largeTitle).frame(alignment: .topLeading).padding(20).frame(alignment: .topLeading).font(.custom("OpenSans-Bold", size: 20)).offset(x: -67)
                 VStack {
                   NavigationLink(destination: MapView()) {
-                    Text("Rewards").foregroundColor(Color.black).font(.largeTitle).padding(20).frame(alignment: .topLeading).font(.custom("OpenSans-Bold", size: 20)).offset(x: -90)
+                      Text("Rewards").foregroundColor(Color(red: 45/255, green: 72/255, blue: 98/255)).font(.largeTitle).padding(20).frame(alignment: .topLeading).font(.custom("OpenSans-Bold", size: 20)).offset(x: -90)
                     }
                   }
             }.padding(.all)
