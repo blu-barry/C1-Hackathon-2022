@@ -14,6 +14,7 @@ struct IdentifiablePlace: Identifiable {
     let location: CLLocationCoordinate2D
     let name: String
     let cashBackPercentage: String
+    var show: Bool = false
     init(id: UUID = UUID(), lat: Double, long: Double, name: String, cashBackPercentage: String) {
         self.id = id
         self.location = CLLocationCoordinate2D(
@@ -66,11 +67,26 @@ struct MapView: View {
             Map(coordinateRegion: $viewModel.region, showsUserLocation: true,
                 annotationItems: hardCodedCapOneOfferStores)
             { place in
-                MapMarker(coordinate: place.location,
-                          tint: .red)
+                MapAnnotation(
+                        coordinate: place.location,
+                        anchorPoint: CGPoint(x: 0.5, y: 0.7)
+                    ) {
+                    VStack{
+                        if place.show {
+                            Text("Test")
+                        }
+                        Image(systemName: "mappin.circle.fill")
+                            .font(.title)
+                            .foregroundColor(.red)
+                            .onTapGesture {
+                                let index: Int = hardCodedCapOneOfferStores.firstIndex(where: {$0.id == place.id})!
+                                hardCodedCapOneOfferStores[index].show.toggle()
+                            }
+                        }
+                    }
             }
             .ignoresSafeArea()
-            .accentColor(Color(.systemPink))
+            .accentColor(Color(.systemBlue))
             .onAppear {
                 viewModel.checkLocationServiceStatus()
             }
