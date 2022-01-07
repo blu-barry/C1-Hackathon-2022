@@ -12,9 +12,7 @@ struct MainView: View {
     @State private var searchText: String = ""
     
     var body: some View {
-        NavigationView {
             MapView()
-        }
     }
 }
 

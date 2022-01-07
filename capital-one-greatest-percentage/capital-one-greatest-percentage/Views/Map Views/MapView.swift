@@ -23,7 +23,7 @@ struct MapView: View {
     
     
     var body: some View {
-        ZStack {
+        ZStack(alignment: .top) {
             Map(coordinateRegion: $viewModel.region, showsUserLocation: true)
                 .ignoresSafeArea()
                 .accentColor(Color(.systemPink))
@@ -33,7 +33,7 @@ struct MapView: View {
             
                 
                 
-            VStack {
+            VStack() {
                 HStack {
                     Image(systemName: "🔍")
                         .foregroundColor(.gray)
@@ -53,9 +53,17 @@ struct MapView: View {
                             
                             ForEach(viewModel.stores){store in
                                 
+                                
                                 Text(store.store.name ?? "")
+                                Text(store.store.thoroughfare ?? "")
+                                //Text(store.store.subThoroughfare ?? "")
+                                Text(store.store.postalCode ?? "")
+                                //Text(store.store.location ?? "")
+                                Text(store.store.description ?? "")
+                                //Text(store.store.region ?? "")
                                     .foregroundColor(.black)
                                     .frame(maxWidth: .infinity, alignment: .leading)
+                                
                                 Divider()
                             }
                         }

@@ -72,6 +72,7 @@ final class MapViewModel: NSObject, ObservableObject, CLLocationManagerDelegate 
             guard let result = response else { return }
             
             self.stores = result.mapItems.compactMap({ (item) -> StoreModel? in
+                print(item.placemark)
                 return StoreModel(store: item.placemark)
             })
         }
