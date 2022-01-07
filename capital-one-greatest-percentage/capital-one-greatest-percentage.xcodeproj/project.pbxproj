@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4644F76B27876303008C531E /* offers.csv in Resources */ = {isa = PBXBuildFile; fileRef = 4644F76A27876303008C531E /* offers.csv */; };
 		4684BE2B278758C1002777C1 /* CashbackDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4684BE2A278758C1002777C1 /* CashbackDataModel.swift */; };
 		A453AFB32786655D0088C876 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A453AFB22786655D0088C876 /* MapView.swift */; };
 		A453AFB527866D310088C876 /* LocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A453AFB427866D310088C876 /* LocationModel.swift */; };
@@ -22,6 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4644F76A27876303008C531E /* offers.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = offers.csv; path = ../../../../../../Downloads/offers.csv; sourceTree = "<group>"; };
+		4644F76C27877136008C531E /* offers.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = offers.csv; sourceTree = "<group>"; };
 		4684BE2A278758C1002777C1 /* CashbackDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashbackDataModel.swift; sourceTree = "<group>"; };
 		A453AFB22786655D0088C876 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		A453AFB427866D310088C876 /* LocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationModel.swift; sourceTree = "<group>"; };
@@ -61,6 +64,7 @@
 		A453AFB02786653C0088C876 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				4644F76A27876303008C531E /* offers.csv */,
 				A453AFC02786A4500088C876 /* MapViewModel.swift */,
 				A453AFB427866D310088C876 /* LocationModel.swift */,
 				A453AFC42786D1400088C876 /* StoreModel.swift */,
@@ -113,6 +117,7 @@
 		A4603B822786526E00D8B9C6 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
+				4644F76C27877136008C531E /* offers.csv */,
 				A4603B832786526E00D8B9C6 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
@@ -191,6 +196,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4644F76B27876303008C531E /* offers.csv in Resources */,
 				A4603B842786526E00D8B9C6 /* Preview Assets.xcassets in Resources */,
 				A4603B812786526E00D8B9C6 /* Assets.xcassets in Resources */,
 			);
