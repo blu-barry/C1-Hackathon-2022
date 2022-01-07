@@ -12,15 +12,15 @@ import CoreLocation
 struct IdentifiablePlace: Identifiable {
     let id: UUID
     let location: CLLocationCoordinate2D
-    //let name: String
-    //let cashBackPercentage: Double
-    init(id: UUID = UUID(), lat: Double, long: Double) {
+    let name: String
+    let cashBackPercentage: String
+    init(id: UUID = UUID(), lat: Double, long: Double, name: String, cashBackPercentage: String) {
         self.id = id
         self.location = CLLocationCoordinate2D(
             latitude: lat,
             longitude: long)
-        //self.name = name
-        //self.cashBackPercentage = cashBackPercentage
+        self.name = name
+        self.cashBackPercentage = cashBackPercentage
     }
 }
 
@@ -33,7 +33,7 @@ struct PinAnnotationMapView: View {
             annotationItems: [place])
         { place in
             MapPin(coordinate: place.location,
-                   tint: Color.purple)
+                   tint: .red)
         }
     }
 }
@@ -43,18 +43,18 @@ struct MapView: View {
     
     //locationManager.requestAlwaysAuthorization()
     //locationManager.requestWhenInUseAuthorization()
-    @State var hardCodedCapOneOfferStores = [IdentifiablePlace(lat: 37.78690641, long: -122.40665000),
-                                             IdentifiablePlace(lat: 37.67396012, long: -122.47090529),
-                                             IdentifiablePlace(lat: 37.92776483, long: -122.51355920),
-                                             IdentifiablePlace(lat: 37.70045284, long: -122.12485898),
-                                             IdentifiablePlace(lat: 38.00457992, long: -122.54292044),
-                                             IdentifiablePlace(lat: 37.53764369, long: -122.29969949),
-                                             IdentifiablePlace(lat: 37.65012503, long: -122.10427549),
-                                             IdentifiablePlace(lat: 37.65008736, long: -122.10425883),
-                                             IdentifiablePlace(lat: 37.89466514, long: -122.05741471),
-                                             IdentifiablePlace(lat: 37.96775698, long: -122.06134444),
-                                             IdentifiablePlace(lat: 37.60536190, long: -122.03958890),
-                                             IdentifiablePlace(lat: 37.69500524, long: -121.92966697)]
+    @State var hardCodedCapOneOfferStores = [IdentifiablePlace(lat: 37.78690641, long: -122.40665000, name: "Macy's", cashBackPercentage: "6%"),
+                                             IdentifiablePlace(lat: 37.67396012, long: -122.47090529, name: "Macy's", cashBackPercentage: "6%"),
+                                             IdentifiablePlace(lat: 37.92776483, long: -122.51355920, name: "Macy's", cashBackPercentage: "6%"),
+                                             IdentifiablePlace(lat: 37.70045284, long: -122.12485898, name: "Macy's", cashBackPercentage: "6%"),
+                                             IdentifiablePlace(lat: 38.00457992, long: -122.54292044, name: "Macy's", cashBackPercentage: "6%"),
+                                             IdentifiablePlace(lat: 37.53764369, long: -122.29969949, name: "Macy's", cashBackPercentage: "6%"),
+                                             IdentifiablePlace(lat: 37.65012503, long: -122.10427549, name: "Macy's", cashBackPercentage: "6%"),
+                                             IdentifiablePlace(lat: 37.65008736, long: -122.10425883, name: "Macy's", cashBackPercentage: "6%"),
+                                             IdentifiablePlace(lat: 37.89466514, long: -122.05741471, name: "Macy's", cashBackPercentage: "6%"),
+                                             IdentifiablePlace(lat: 37.96775698, long: -122.06134444, name: "Macy's", cashBackPercentage: "6%"),
+                                             IdentifiablePlace(lat: 37.60536190, long: -122.03958890, name: "Macy's", cashBackPercentage: "6%"),
+                                             IdentifiablePlace(lat: 37.69500524, long: -121.92966697, name: "Macy's", cashBackPercentage: "6%")]
     
     @StateObject private var viewModel = MapViewModel()
     @State private var locationModel: LocationModel?
@@ -66,8 +66,8 @@ struct MapView: View {
             Map(coordinateRegion: $viewModel.region, showsUserLocation: true,
                 annotationItems: hardCodedCapOneOfferStores)
             { place in
-                MapPin(coordinate: place.location,
-                       tint: .red)
+                MapMarker(coordinate: place.location,
+                          tint: .red)
             }
             .ignoresSafeArea()
             .accentColor(Color(.systemPink))
